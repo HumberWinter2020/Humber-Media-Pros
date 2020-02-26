@@ -1,0 +1,13 @@
+.program, .main-section{
+  border-bottom: solid 1px;
+}
+
+.program h2, .main-section h2, .course h2{
+  text-align: center;
+  width: 100%;
+  padding: 0.25rem;
+}
+
+.program p, .main-section p, .course p{
+  padding: 1rem;
+}
