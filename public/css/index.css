@@ -286,6 +286,66 @@ body {
 	text-align: left;
 }
 
+/*Styling for Profile page*/
+
+.details_Section{
+	margin-top: 4em;
+	margin-bottom: 3em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-right: 2em;
+	padding-left: 2em;
+}
+
+
+.connect{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/*styling for hero and image on it in profile page*/
+
+.main{
+    display:block;
+    position:relative;
+    width: 980px;
+    margin: 0 auto;
+}
+.cover{
+    display:block;
+    position:relative;
+    height:437px;
+    overflow:hidden;
+    z-index:1;
+}
+.cover img{
+   max-width:100%;
+    z-index:1;
+}
+.profile{
+   display:block;
+    position:relative;
+    border:#d0efff solid 3px;
+    border-radius:5px;
+    width:200px;
+    height:200px;
+    margin: -220px 0 10px 20px;
+    z-index:999;
+}
+.profile img{
+   max-width:100%;
+    z-index:999;
+}
+
+/*Styling for programs page*/
+
+.programs_intro{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 2em;
+}
+
+
 
 
 
