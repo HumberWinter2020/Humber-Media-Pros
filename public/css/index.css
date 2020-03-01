@@ -342,9 +342,74 @@ body {
 .programs_intro{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 2em;
+	grid-column-gap: 1em;
+}
+.program{
+  margin:1em;
+  position: relative;
+
+}
+.program a{
+  color: inherit;
 }
 
+.about-title{
+  font-size:3em;
+  padding: 1em;
+}
+
+.about-media-title{
+  font-size:2em;
+  padding:1em;
+}
+
+.about-title-image{
+  width:100%;
+  height:100%;
+}
+.about-program-image{
+  width: 100%;
+  height: 12em;
+}
+.about-program-title{
+  margin:1em;
+  font-size:1.2em;
+  text-align: center;
+
+}
+.about-explore-btn{
+  position: absolute;
+  bottom:1em;
+  left: 33%;
+  border-radius: 0.5em;
+  background-color: #014B77;
+  color: white;
+  padding:0.5em;
+  font-size: 1.3em;
+
+}
+.about-benefit{
+  font-size: 1em;
+  color: rgb(78, 78, 78);
+  padding:1em 2em;
+  list-style-type:disc;
+}
+.about-benefit li{
+  margin: 0.5em;
+}
+
+.program_info{
+  margin:1em;
+}
+.program_info h2{
+  padding:1em;
+  font-size:1.5em
+
+}
+.program_details{
+  margin:1em;
+
+}
 
 
 
