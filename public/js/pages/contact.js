@@ -4,13 +4,13 @@ export default class Contact extends Page {
 	constructor() {
 		super()
 		this.html = `
-		<h2 style="text-align:center">Your Profile</h2>
+		<h2 class="contactus-title">Your Profile</h2>
 		<section class="main">
     <article class="cover">
-        <img src="../img/conor.jpg" />
+        <img src="../img/conor.jpg" class="contact-image"/>
     </article>
     <article class="profile">
-        <img src="../img/conor.jpg" />
+        <img src="../img/icons/icons8-user-90.png" />
     </article>
 </section>
 		<Section class="details_Section">
@@ -20,7 +20,7 @@ export default class Contact extends Page {
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptatum molestias odit, vero perspiciatis vitae earum ut neque sint animi nobis corporis, amet modi fugit beatae illum! Reiciendis, dolor consectetur.
 		</article>
 		
-		<article>
+		<article class="contactus-detail">
 		<h3>Details</h3>
           <h2>
           First Name Last Name
