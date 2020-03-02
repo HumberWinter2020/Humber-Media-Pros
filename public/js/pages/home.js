@@ -35,6 +35,7 @@ export default class Home extends Page {
 	</article>
 
 	<h2 class="title">Who We Are</h2>
+	<iframe class="us-vid" src="https://www.youtube.com/embed/julQT58GvF4"></iframe>
 
 
 			`
