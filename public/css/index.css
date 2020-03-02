@@ -41,45 +41,40 @@ body {
 
 }
 
-.header-logo{
+.top-nav-bar{
   display:grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-columns: 20% 80%;
   align-items: center;
   /* align-content: space-between; */
-  justify-items: center;
+  justify-items: flex-end;
   /* justify-content: space-between; */
-	padding: 0.75rem;
+	padding: 0.5rem;
 	/* margin: 0; */
  
+  /* overflow: hidden;
+  background-color:var(--primary);
+  position: fixed;
+  top: 0;
+  width: 100%; */
 }
 
-.logo, .signin {
-  width: 100%;
-}
-
-.logo{
-	text-align: left;
-}
-
-.signin{
-	text-align: right;
-}
-
-.logo img, .signin img{
-  /* flex-basis: 100%; */
-  margin-left: auto;
-	margin-right: auto;
-	padding: 0 0.5rem;
+.humber-icon{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* align-items: flex-end;
+  justify-content: flex-end;  */
+  /* background-color: burlywood; */
+  width: 50%;
+/* margin-left: 20rem; */
 
 }
 
-.logo img{
-  width: 100%;
-}
+.humber-icon li{
+  padding-left: 2rem;
+ 
+ }
 
-.signin img{
-  width: 20%;
-}
 
 
 .nav-bar{
@@ -108,6 +103,11 @@ body {
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
+
+  /* overflow: hidden;
+  position: fixed;
+  top:70px; */
+
 }
 
 #menuToggle a
