@@ -9,7 +9,9 @@ export default class Home extends Page {
 	</div>
 	<div class="main-section">
 		<h2>Welcome!</h2>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, excepturi placeat deserunt a sint tempore iure delectus. Explicabo tenetur eligendi rerum consequatur adipisci! Non recusandae provident placeat facere aut architecto!</p>
+		<p>Humber invites you to attend our 2019 MEDIA PROS Grad Show.
+
+		Join our students from the one-year intensive study programs in Graphic Design, Web Design and Development and 3D Modelling and Visual Effects; browse their portfolios, talk about their career goals and maybe find your next best employee.</p>
 	</div>
 
 	<h2 class="title">Courses</h2>
@@ -23,13 +25,13 @@ export default class Home extends Page {
 	<article class="people">
 		<section>
 			<h1>Alumni</h1>
-			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. bitis, tempore enim dolor aut cum architecto est in!</p>
+			<p>Advancement and Alumni is committed to establishing lifelong connections with our 250,000+ graduates and strengthening our relationship with the Humber community. We want to stay connected with you, share news and stories about your career achievements, celebrate your successes, and provide you with value-added services and benefits.</p>
 			<input type="button" value="View" class='view-btn'>
 		</section>
 
 		<section>
 			<h1>Staff</h1>
-			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. bitis, tempore enim dolor aut cum architecto est in!</p>
+			<p>MyHumber provides staff and faculty with access to Academic Progress, grade entry, program rosters, Student Action Form (SAF) functionality, and additional information about courses, programs, and students.</p>
 			<input type="button" value="View" class='view-btn'>
 		</section>
 	</article>
