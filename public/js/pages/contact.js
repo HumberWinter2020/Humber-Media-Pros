@@ -13,6 +13,7 @@ export default class Contact extends Page {
         <img src="../img/icons/icons8-user-90.png" />
     </article>
 </section>
+<<<<<<< HEAD
 		<Section class="details_Section">
 		
 		<article>
@@ -21,6 +22,10 @@ export default class Contact extends Page {
 		</article>
 		
 		<article class="contactus-detail">
+=======
+    <Section class="details_Section">
+    <article class>
+>>>>>>> sashidhar-branch
 		<h3>Details</h3>
           <h2>
           First Name Last Name
@@ -33,8 +38,24 @@ export default class Contact extends Page {
 		  </p>
 		  <p>Skillset: HTML , CSS, JS</p>
         </article>
-		</Section>
-		<h3>Connect with me on </h3>
+		<article>
+		<h3>Bio</h3>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptatum molestias odit, vero perspiciatis vitae earum ut neque sint animi nobis corporis, amet modi fugit beatae illum! Reiciendis, dolor consectetur.
+		</article>
+    </Section>
+
+    <section class="projects_social">
+    <article class="projects">
+        <h2>Projects</h2>
+        <p>		Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptatum molestias odit, vero perspiciatis vitae earum ut neque sint animi nobis corporis, amet modi fugit beatae illum! Reiciendis, dolor consectetur.
+        </p>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptatum molestias odit, vero perspiciatis vitae earum ut neque sint animi nobis corporis, amet modi fugit beatae illum! Reiciendis, dolor consectetur.
+        </p>
+    </article>
+
+    <article class="social">
+    <h3>Connect with me on </h3>
         <section class="connect">
         <article class="connect_gridItem">
           <i class="fab fa-facebook fa-7x"></i>
@@ -48,7 +69,10 @@ export default class Contact extends Page {
         <article class="connect_gridItem">
           <i class="fab fa-codepen fa-7x"></i>
         </article>
-        </section>`
+        </section>
+    </article>
+    </section>
+    `
 	}
 }
 
