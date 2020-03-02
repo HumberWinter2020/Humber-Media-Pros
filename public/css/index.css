@@ -295,9 +295,14 @@ body {
     width: 80%;
   }
   
-  .signin img{
-    width: 15%;
+  .humber-icon{
+
+    width: 40%;
+
   }
+  /* .signin img{
+    width: 15%;
+  } */
 
   .information img{
     width: 100%;
@@ -351,8 +356,14 @@ body {
     width: 70%;
   }
   
-  .signin img{
+  /* .signin img{
     width: 12%;
+  } */
+
+  .humber-icon{
+
+    width: 30%;
+
   }
 
   .information img{
@@ -380,9 +391,16 @@ body {
     width: 55%;
   }
   
-  .signin img{
+  /* .signin img{
     width: 10%;
+  } */
+
+  .humber-icon{
+
+    width: 20%;
+
   }
+
   .information img{
     width: 100%;
     max-width: 25%;
