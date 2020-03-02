@@ -23,13 +23,13 @@ export default class Home extends Page {
 	<article class="people">
 		<section>
 			<h1>Alumni</h1>
-			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. bitis, tempore enim dolor aut cum architecto est in!</p>
+			<p>View past humber media pro graduates, See thier skilset and projects </p>
 			<input type="button" value="View" class='view-btn'>
 		</section>
 
 		<section>
 			<h1>Staff</h1>
-			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. bitis, tempore enim dolor aut cum architecto est in!</p>
+			<p>Humber professors teaching at the Media building, talk to coordinators and staff</p>
 			<input type="button" value="View" class='view-btn'>
 		</section>
 	</article>
