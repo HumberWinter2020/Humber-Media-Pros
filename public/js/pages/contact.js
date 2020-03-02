@@ -13,19 +13,11 @@ export default class Contact extends Page {
         <img src="../img/icons/icons8-user-90.png" />
     </article>
 </section>
-<<<<<<< HEAD
 		<Section class="details_Section">
 		
-		<article>
-		<h3>Bio</h3>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptatum molestias odit, vero perspiciatis vitae earum ut neque sint animi nobis corporis, amet modi fugit beatae illum! Reiciendis, dolor consectetur.
-		</article>
+	
 		
 		<article class="contactus-detail">
-=======
-    <Section class="details_Section">
-    <article class>
->>>>>>> sashidhar-branch
 		<h3>Details</h3>
           <h2>
           First Name Last Name
