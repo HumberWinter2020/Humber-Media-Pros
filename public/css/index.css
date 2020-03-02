@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
 *{
 	text-decoration: none;
 
@@ -29,7 +30,7 @@ a:hover{
 
 body {
 	background-color: var(--light);
-	font: 1em helvetica, sans-serif;
+	font: 1em 'Nanum Gothic', sans-serif;
   color: var(--dark);
   overflow-x: hidden;
  
