@@ -44,7 +44,7 @@ body {
 .top-nav-bar{
   display:grid;
   /* grid-template-columns: repeat(2, 1fr); */
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 30% 70%;
   align-items: center;
   /* align-content: space-between; */
   justify-items: flex-end;
@@ -59,16 +59,20 @@ body {
   width: 100%; */
 }
 
+.humber-logo{
+  width: 100%;
+}
+
 .humber-icon{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* align-items: flex-end;
-  justify-content: flex-end;  */
-  /* background-color: burlywood; */
-  width: 50%;
-/* margin-left: 20rem; */
-
+  width: 45%;
+  text-align: right;
 }
+
+/* .humber-icon img{
+  width: 25%;
+} */
 
 .humber-icon li{
   padding-left: 2rem;
@@ -291,12 +295,14 @@ body {
 
 /* MEDIA QUERIES */
 @media(min-width: 600px){
-  .logo img{
-    width: 80%;
+
+  .humber-logo img{
+    width: 90%;
   }
-  
-  .signin img{
-    width: 15%;
+
+  .humber-icon img{
+    width: 80%;
+
   }
 
   .information img{
@@ -347,12 +353,13 @@ body {
 }
 
 @media(min-width: 800px){
-  .logo img{
-    width: 70%;
+  .humber-logo img{
+    width: 80%;
+
   }
-  
-  .signin img{
-    width: 12%;
+
+  .humber-icon img{
+    width: 65%;
   }
 
   .information img{
@@ -376,13 +383,15 @@ body {
 }
 
 @media(min-width: 1000px){
-  .logo img{
-    width: 55%;
+  .humber-logo img{
+    width: 70%;
+
   }
-  
-  .signin img{
-    width: 10%;
+
+  .humber-icon img{
+    width: 50%;
   }
+
   .information img{
     width: 100%;
     max-width: 25%;
