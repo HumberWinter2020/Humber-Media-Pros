@@ -4,66 +4,38 @@ export default class Contact extends Page {
 	constructor() {
 		super()
 		this.html = `
-		<h2 class="contactus-title">Your Profile</h2>
-		<section class="main">
-    <article class="cover">
-        <img src="../img/conor.jpg" class="contact-image"/>
+		<article class="student-picture">
+      <section class="cover-image">
+        
+      </section>
+      <section class="profile-picture">
+        <img src="img/students/blank-profile-picture.png" alt="">
+      </section>
     </article>
-    <article class="profile">
-        <img src="../img/icons/icons8-user-90.png" />
+  
+    <article class="student-info">    
+      <fieldset class="about-student">
+        <legend for="about-student"><img src="img/icons/icons8-user-90.png" alt="">About</legend>
+        <ul>
+          <li>Student ID : </li>
+          <li>First Name : </li>
+          <li>Last Name : </li>
+          <li>Phone Number : </li>
+          <li>Email : </li>
+          <li>Address :</li>
+          <li><a href="#"><img src="/img/icons/facebook.png" alt=""></a></li>
+          <li><a href="#"><img src="/img/icons/linkedin.png" alt="" srcset=""></a></li>
+          <li><a href="#"><img src="/img/icons/github.png" alt="" srcset=""></a></li>
+        </ul>
+      </fieldset>
+      <fieldset class="student-skill">
+        <legend for="student-skill"><a href="/skills" alt="Skills">&nbsp; Skills</a> &nbsp;|&nbsp; <a href="/projects">Projects &nbsp;</a></legend>
+        <ul>
+          <li>1.</li>
+          <li>2.</li>
+        </ul>
+      </fieldset>
     </article>
-</section>
-		<Section class="details_Section">
-		
-	
-		
-		<article class="contactus-detail">
-		<h3>Details</h3>
-          <h2>
-          First Name Last Name
-          </h2>
-          <p>
-          Graduated in year
-          </p>
-          <p>
-          Program: Program Name
-		  </p>
-		  <p>Skillset: HTML , CSS, JS</p>
-        </article>
-		<article>
-		<h3>Bio</h3>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptatum molestias odit, vero perspiciatis vitae earum ut neque sint animi nobis corporis, amet modi fugit beatae illum! Reiciendis, dolor consectetur.
-		</article>
-    </Section>
-
-    <section class="projects_social">
-    <article class="projects">
-        <h2>Projects</h2>
-        <p>		Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptatum molestias odit, vero perspiciatis vitae earum ut neque sint animi nobis corporis, amet modi fugit beatae illum! Reiciendis, dolor consectetur.
-        </p>
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptatum molestias odit, vero perspiciatis vitae earum ut neque sint animi nobis corporis, amet modi fugit beatae illum! Reiciendis, dolor consectetur.
-        </p>
-    </article>
-
-    <article class="social">
-    <h3>Connect with me on </h3>
-        <section class="connect">
-        <article class="connect_gridItem">
-          <i class="fab fa-facebook fa-7x"></i>
-        </article>
-        <article class="connect_gridItem">
-          <i class="fab fa-github fa-7x"></i>
-        </article>
-        <article class="connect_gridItem">
-          <i class="fab fa-linkedin fa-7x"></i>
-        </article>
-        <article class="connect_gridItem">
-          <i class="fab fa-codepen fa-7x"></i>
-        </article>
-        </section>
-    </article>
-    </section>
     `
 	}
 }
