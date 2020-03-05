@@ -1,6 +1,6 @@
 import Home from '/js/pages/home.js'
-import About from '/js/pages/about.js'
-import Contact from '/js/pages/contact.js'
+import Programs from '/js/pages/programs.js'
+import Students from '/js/pages/students.js'
 
 // Store a few references
 const $routes = document.querySelectorAll('.router a')
@@ -9,8 +9,8 @@ const $main =   document.querySelector('.main')
 // Create our page routes
 const routes = {
 	home: new Home(),
-	about: new About(),
-	contact: new Contact()
+	programs: new Programs(),
+	students: new Students()
 }
 
 // Load new page content
