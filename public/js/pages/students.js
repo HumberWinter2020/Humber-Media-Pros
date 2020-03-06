@@ -1,11 +1,17 @@
 import Page from '../page.js'
 
+const settings = {
+  notifyQuantitiesRemaining: 5,
+  // productsPerPage: 3,
+  coverPath: 'img/students/covers/',
+  profilePath :'img/students/profiles/'
+}
 
 const allStudents =[
   { //0
     id : 20200101,
     coverImg:`img01a.jpg`,
-    profilePicture : `img01.jpg`,
+    profilePicture : `img01.png`,
     firstName: `Ivandi`,
     lastName:`Santoso`,
     phoneNumber: 123456789,
@@ -19,13 +25,13 @@ const allStudents =[
   },{ //1
     id : 20200102,
     coverImg:`img02a.jpg`,
-    profilePicture : `img02.jpg`,
-    firstName: ``,
-    lastName:``,
-    phoneNumber: ``,
-    email: `@humbermail.ca`,
-    skills: ``,
-    projects: ``,
+    profilePicture : `img02.png`,
+    firstName: `Student`,
+    lastName:`Two`,
+    phoneNumber: `456789123`,
+    email: `student.two@humbermail.ca`,
+    skills: `HTML, CSS`,
+    projects: `Re-make apple website`,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
@@ -67,7 +73,7 @@ export default class Contact extends Page {
         
       </section>
       <section class="profile-picture">
-        <img src="img/students/blank-profile-picture.png" alt="">
+        <img src="img/students/profiles/blank-profile-picture.png" alt="">
       </section>
     </article>
   
