@@ -1,21 +1,62 @@
 import Page from '../page.js'
 
-const student =
+
+const allStudents =[
   { //0
     id : 20200101,
-    coverImg:`img01.jpg`,
+    coverImg:`img01a.jpg`,
     profilePicture : `img01.jpg`,
-    firstName: `Student`,
-    lastName:`One`,
-    phoneNumber: `123456789`,
-    email: `test@example.com`,
-    skills: ["HTML","CSS","JavaScript"],
-    projects: ["Single Page Application", "Web Store"],
-    facebookURL: `https://www.facebook.com/student.one`,
-    linkedinURL:`https://www.linkedin.com/in/student.one/`,
-    githubURL:`https://github.com/student.one`
-  };
-
+    firstName: `Ivandi`,
+    lastName:`Santoso`,
+    phoneNumber: 123456789,
+    email: `n01398965@humbermail.ca`,
+    skills: `HTML, CSS, JavaScript`,
+    projects: `Single Page Application, Web Store`,
+    facebookURL: `https://www.facebook.com/ivandisantoz`,
+    linkedinURL:`https://www.linkedin.com/in/ivandisantoso/`,
+    githubURL:`https://github.com/ivandisantoso`
+  
+  },{ //1
+    id : 20200102,
+    coverImg:`img02a.jpg`,
+    profilePicture : `img02.jpg`,
+    firstName: ``,
+    lastName:``,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: ``,
+    projects: ``,
+    facebookURL: ``,
+    linkedinURL:``,
+    githubURL:``
+  },{ //2
+    id : 20200103,
+    coverImg:`img03a.jpg`,
+    profilePicture : `img03.jpg`,
+    firstName: ``,
+    lastName:``,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: ``,
+    projects: ``,
+    facebookURL: ``,
+    linkedinURL:``,
+    githubURL:``
+  },{ //3
+    id : 20200104,
+    coverImg:`img04a.jpg`,
+    profilePicture : `img04.jpg`,
+    firstName: ``,
+    lastName:``,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: ``,
+    projects: ``,
+    facebookURL: ``,
+    linkedinURL:``,
+    githubURL:``
+  }
+];
 
 export default class Contact extends Page {
 	constructor() {
