@@ -1,5 +1,22 @@
 import Page from '../page.js'
 
+const student =
+  { //0
+    id : 20200101,
+    coverImg:`img01.jpg`,
+    profilePicture : `img01.jpg`,
+    firstName: `Student`,
+    lastName:`One`,
+    phoneNumber: `123456789`,
+    email: `test@example.com`,
+    skills: ["HTML","CSS","JavaScript"],
+    projects: ["Single Page Application", "Web Store"],
+    facebookURL: `https://www.facebook.com/student.one`,
+    linkedinURL:`https://www.linkedin.com/in/student.one/`,
+    githubURL:`https://github.com/student.one`
+  };
+
+
 export default class Contact extends Page {
 	constructor() {
 		super()
