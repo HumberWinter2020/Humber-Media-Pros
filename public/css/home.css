@@ -1,4 +1,4 @@
-.program, .main-section{
+/* .program, .main-section{
   border-bottom: solid 1px;
 }
 
@@ -10,4 +10,80 @@
 
 .program p, .main-section p, .course p{
   padding: 1rem;
+} */
+
+
+.home-name h2{
+  font-size: 3rem;
+  padding: 1rem;
+}
+
+.home-name, .main-section{
+  border-bottom: solid 1px;
+}
+
+.home-name h2, .main-section h2, .course h2{
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+  padding: 0.25rem;
+}
+
+.title{
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.home-name p, .main-section p, .title p{
+  padding: 1rem;
+}
+
+.choices{
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  
+}
+
+.choices section{
+  opacity: 0.7;
+  color: whitesmoke;
+  padding-top: 14rem;
+  border: 1px solid black;
+  text-align: center;
+  height: 30rem;
+  background-size: cover;
+}
+.web{background-image: url('../img/home/code.jpg');}
+.print{background-image: url('../img/home/des.jpg');}
+.mod{background-image: url('../img/home/model.jpg');}
+
+.people{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 1rem 8rem
+}
+.people > section{
+  text-align: center;
+}
+.people > section h1{
+  font-size: 1.5rem;
+}
+
+.view-btn{
+  color: white;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1.3rem;
+  background-color: #014B77
+}
+
+.us-vid{
+  width: 80%;
+  height: 30rem;
+  margin: 1rem 8rem;
+  margin-bottom: 4rem;
 }
