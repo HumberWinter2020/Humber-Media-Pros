@@ -3,15 +3,15 @@ import Page from '../page.js'
 const settings = {
   notifyQuantitiesRemaining: 5,
   // productsPerPage: 3,
-  coverPath: 'img/students/covers/',
-  profilePath :'img/students/profiles/'
+  coverPath: '/img/students/covers/',
+  profilePath :'/img/students/profiles/'
 }
 
 const allStudents =[
   { //0
     id : 20200101,
     coverImg:`img01a.jpg`,
-    profilePicture : `img01.png`,
+    profilePicture : `img01.jpg`,
     firstName: `Ivandi`,
     lastName:`Santoso`,
     program:`wddm`,
@@ -26,7 +26,7 @@ const allStudents =[
   },{ //1
     id : 20200102,
     coverImg:`img02a.jpg`,
-    profilePicture : `img02.png`,
+    profilePicture : `img02.jpg`,
     firstName: `sashidhar`,
     lastName:`meesala`,
     program:`wddm`,
@@ -73,7 +73,7 @@ export default class Contact extends Page {
 		super()
     this.html = `<h2>Find students by programs</h2>
     <h3>test<\h3>
-    <ul class="router">
+    <ul>
     <li><a href="students/Wddm">Web Design and dev</a></li>
     <li><a href="students/graphicdesign">Graphic design</a></li>
     <li><a href="students/modellingandvisualeffects">3d modelling and visual des</a></li>    
@@ -96,7 +96,7 @@ export default class Contact extends Page {
     if (path[0] == 'Wddm') {
       $app.innerHTML = `<h3>wdmm</h3>
       <p>WDDDM</p>
-      <ul class="router">`
+      <ul>`
       $app.innerHTML+=allStudents.filter(p => p.program == 'wddm').map(returnStudentCardAsHTML).join("\n");
     
     } else if (path[0]== 'graphicdesign') {
@@ -123,12 +123,16 @@ export default class Contact extends Page {
 
 function returnStudentCardAsHTML(student){
   return `
-    <article class="card">
-  <img src="${student.profilePicture}" alt="${student.firstName}" style="width:100%">
-  <h1>${student.firstName}</h1>
-  <h2>${student.skills}</h2>
-  <h2>${student.email}</h2>
-  <ul class="router"><li><a href="students/${student.firstName}">Know more</a></li></ul>
+  <article class="card">
+    <img src="${settings.profilePath+student.profilePicture}" alt="${student.firstName}" >
+    <ul class="student-card-info">
+      <li>Full name : ${student.firstName} ${student.lastName}</li>
+      <li>Skills set : ${student.skills}</li>
+      <li>Email : ${student.email}</li>
+    </ul>
+    <ul class="router">
+      <li><a href="students/${student.firstName}">Know more</a></li>
+    </ul>
   </article>
   
   `
@@ -136,36 +140,38 @@ function returnStudentCardAsHTML(student){
 
 }
 
+
+
 function returnStudentProfileAsHTML(students){
 return `<article class="student-picture">
 <section class="cover-image">
   
 </section>
 <section class="profile-picture">
-  <img src="img/students/profiles/blank-profile-picture.png" alt="">
+<img src="${settings.profilePath+students.profilePicture}" alt="${students.firstName}" >
 </section>
 </article>
 
 <article class="student-info">    
 <fieldset class="about-student">
-  <legend for="about-student"><img src="img/icons/icons8-user-90.png" alt="">About</legend>
+  <legend for="about-student">&nbsp; About &nbsp;</legend>
   <ul>
     <li>Student ID : ${students.id}</li>
     <li>First Name : ${students.firstName}</li>
     <li>Last Name :${students.lastName} </li>
     <li>Phone Number:${students.phoneNumber} </li>
     <li>Email : ${students.email}</li>
-    <li><a href="#"><img src="/img/icons/facebook.png" alt=""></a></li>
-    <li><a href="#"><img src="/img/icons/linkedin.png" alt="" srcset=""></a></li>
-    <li><a href="#"><img src="/img/icons/github.png" alt="" srcset=""></a></li>
+    <li><a href="${students.facebookURL}"><img src="/img/icons/facebook.png" alt=""></a></li>
+    <li><a href="${students.linkedinURL}"><img src="/img/icons/linkedin.png" alt="" srcset=""></a></li>
+    <li><a href="${students.githubURL}"><img src="/img/icons/github.png" alt="" srcset=""></a></li>
   </ul>
 </fieldset>
 <fieldset class="student-skill">
   <legend for="student-skill"><a href="/skills" alt="Skills">&nbsp; Skills</a> &nbsp;|&nbsp; <a href="/projects">Projects &nbsp;</a></legend>
-  <ul>
-    <li>1.</li>
-    <li>2.</li>
-  </ul>
+  <ol>
+    <li>${students.skills}</li>
+    
+  </ol>
 </fieldset>
 </article>`
 
@@ -176,6 +182,5 @@ return `<article class="student-picture">
 function returnWddmLinks(students){
 return `<li><a href="students/${students.firstName}">${students.firstName}</a></li>`;
 }
-
 
 
