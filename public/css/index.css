@@ -297,6 +297,23 @@ body {
   z-index:999;
 }
 
+
+.profile-title{
+  font-size: 2em;
+}
+
+.student-info{
+  line-height: 1.5em;
+  margin:2em 0;
+
+}
+.student-skill{
+  line-height: 1.5em;
+
+}
+.profile-media{
+  display:inlin;
+}
 /*Styling for programs page*/
 
 .programs_intro{
