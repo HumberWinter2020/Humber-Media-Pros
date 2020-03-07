@@ -39,7 +39,7 @@ export default class About extends Page {
             <br>
             <br>
             <br>
-            <a href="programs/Wddm"><button class="about-explore-btn">Explore</button></a>
+            <a href="programs/Wddm"><button class="about-explore-btn">Find Students</button></a>
             
         </article>
         <article class="program">
@@ -52,7 +52,7 @@ export default class About extends Page {
             <li>Graduate the program with a portfolio to present to potential employers</li>
             <li>Make connections with industry professionals by participating in a portfolio show</li>
             </ul>
-            <a href="programs/graphicdesign"><button class="about-explore-btn">Explore</button></a>
+            <a href="programs/graphicdesign"><button class="about-explore-btn">Find Students</button></a>
         </article>
         <article class="program">
             <img src="../img/3D-image.jpg" class="about-program-image"/>
@@ -63,7 +63,7 @@ export default class About extends Page {
             <li>Course curriculum taught and designed by industry professionals</li>
             <li>Teaching process and course structure follows a “pipelines process,” mirroring the realities of a real-world production environment</li>
             </ul>
-            <a href="programs/modellingandvisualeffects"><button class="about-explore-btn">Explore</button></a>
+            <a href="programs/modellingandvisualeffects"><button class="about-explore-btn">Find Students</button></a>
         </article>
     </section>
     <article id="info"></article>
