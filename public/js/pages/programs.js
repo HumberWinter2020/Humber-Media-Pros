@@ -39,7 +39,7 @@ export default class About extends Page {
             <br>
             <br>
             <br>
-            <a href="programs/Wddm"><button class="about-explore-btn">Find Students</button></a>
+            <a href="students/Wddm"><button class="about-explore-btn">Find Students</button></a>
             
         </article>
         <article class="program">
@@ -52,7 +52,7 @@ export default class About extends Page {
             <li>Graduate the program with a portfolio to present to potential employers</li>
             <li>Make connections with industry professionals by participating in a portfolio show</li>
             </ul>
-            <a href="programs/graphicdesign"><button class="about-explore-btn">Find Students</button></a>
+            <a href="students/graphicdesign"><button class="about-explore-btn">Find Students</button></a>
         </article>
         <article class="program">
             <img src="../img/3D-image.jpg" class="about-program-image"/>
@@ -63,7 +63,7 @@ export default class About extends Page {
             <li>Course curriculum taught and designed by industry professionals</li>
             <li>Teaching process and course structure follows a “pipelines process,” mirroring the realities of a real-world production environment</li>
             </ul>
-            <a href="programs/modellingandvisualeffects"><button class="about-explore-btn">Find Students</button></a>
+            <a href="students/modellingandvisualeffects"><button class="about-explore-btn">Find Students</button></a>
         </article>
     </section>
     <article id="info"></article>
@@ -79,9 +79,9 @@ export default class About extends Page {
 	subrequests(path) {
 		console.log(path) // The path (after the page) as an Array
 
-		const $info = document.getElementById('info')
+		//const $info = document.getElementById('info')
 
-		// Depending on the first directive in the URL, load up different content (these can also be Page components!)
+		/* Depending on the first directive in the URL, load up different content (these can also be Page components!)
 		if (path[0] == 'Wddm') {
 			$info.innerHTML = `<h3>wdmm</h3>
 			<p>WDDDM</p>
@@ -95,7 +95,7 @@ export default class About extends Page {
         else if (path[0] == 'modellingandvisualeffects') {
 			$info.innerHTML = `<h3>modellingandvisualeffects</h3>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo quam eius fuga facere, totam veritatis. Corporis, minima cum, maiores, voluptatem dignissimos illo consequuntur cumque repellat pariatur blanditiis itaque. Laboriosam.</p>`
-        }
+        }*/
         
 
 	}

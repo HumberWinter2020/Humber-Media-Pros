@@ -14,6 +14,7 @@ const allStudents =[
     profilePicture : `img01.png`,
     firstName: `Ivandi`,
     lastName:`Santoso`,
+    program:`wddm`,
     phoneNumber: 123456789,
     email: `n01398965@humbermail.ca`,
     skills: `HTML, CSS, JavaScript`,
@@ -26,8 +27,9 @@ const allStudents =[
     id : 20200102,
     coverImg:`img02a.jpg`,
     profilePicture : `img02.png`,
-    firstName: `Student`,
-    lastName:`Two`,
+    firstName: `sashidhar`,
+    lastName:`meesala`,
+    program:`wddm`,
     phoneNumber: `456789123`,
     email: `student.two@humbermail.ca`,
     skills: `HTML, CSS`,
@@ -39,8 +41,9 @@ const allStudents =[
     id : 20200103,
     coverImg:`img03a.jpg`,
     profilePicture : `img03.jpg`,
-    firstName: ``,
-    lastName:``,
+    firstName: `ram`,
+    lastName:`charan`,
+    program:`Graphic Design`,
     phoneNumber: ``,
     email: `@humbermail.ca`,
     skills: ``,
@@ -52,8 +55,9 @@ const allStudents =[
     id : 20200104,
     coverImg:`img04a.jpg`,
     profilePicture : `img04.jpg`,
-    firstName: ``,
-    lastName:``,
+    firstName: `priya`,
+    lastName:`kumari`,
+    program:`3d modelling and visual`,
     phoneNumber: ``,
     email: `@humbermail.ca`,
     skills: ``,
@@ -65,42 +69,113 @@ const allStudents =[
 ];
 
 export default class Contact extends Page {
-	constructor() {
+  constructor() {
 		super()
-		this.html = `
-		<article class="student-picture">
-      <section class="cover-image">
-        
-      </section>
-      <section class="profile-picture">
-        <img src="img/students/profiles/blank-profile-picture.png" alt="">
-      </section>
-    </article>
+    this.html = `<h2>Find students by programs</h2>
+    <h3>test<\h3>
+    <ul class="router">
+    <li><a href="students/Wddm">Web Design and dev</a></li>
+    <li><a href="students/graphicdesign">Graphic design</a></li>
+    <li><a href="students/modellingandvisualeffects">3d modelling and visual des</a></li>    
+    </ul>
+    <article id="app"></article>`
+  }
+  registerListeners() {
+    console.log('registerListeners() from: students page')
+    //document.querySelector('#dosomething').addEventListener('click', event => {
+      //alert("It worked!")
+    //})
+  }
+  subrequests(path) {
+    console.log(path) // The path (after the page) as an Array
   
-    <article class="student-info">    
-      <fieldset class="about-student">
-        <legend for="about-student"><img src="img/icons/icons8-user-90.png" alt="">About</legend>
-        <ul>
-          <li>Student ID : </li>
-          <li>First Name : </li>
-          <li>Last Name : </li>
-          <li>Phone Number : </li>
-          <li>Email : </li>
-          <li>Address :</li>
-          <li><a href="#"><img src="/img/icons/facebook.png" alt=""></a></li>
-          <li><a href="#"><img src="/img/icons/linkedin.png" alt="" srcset=""></a></li>
-          <li><a href="#"><img src="/img/icons/github.png" alt="" srcset=""></a></li>
-        </ul>
-      </fieldset>
-      <fieldset class="student-skill">
-        <legend for="student-skill"><a href="/skills" alt="Skills">&nbsp; Skills</a> &nbsp;|&nbsp; <a href="/projects">Projects &nbsp;</a></legend>
-        <ul>
-          <li>1.</li>
-          <li>2.</li>
-        </ul>
-      </fieldset>
-    </article>
-    `
-	}
+    const $app = document.getElementById('app')
+    const arrayLength = path.length;
+    const Lastroute =window.location.pathname.split('/')[window.location.pathname.split('/').length-1]
+    //Depending on the first directive in the URL, load up different content (these can also be Page components!)
+    if (path[0] == 'Wddm') {
+      $app.innerHTML = `<h3>wdmm</h3>
+      <p>WDDDM</p>
+      <ul class="router">`
+      $app.innerHTML+=allStudents.filter(p => p.program == 'wddm').map(returnStudentCardAsHTML).join("\n");
+    
+    } else if (path[0]== 'graphicdesign') {
+      $app.innerHTML = `<h3>graphicdesign</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo quam eius fuga facere, totam veritatis. Corporis, minima cum, maiores, voluptatem dignissimos illo consequuntur cumque repellat pariatur blanditiis itaque. Laboriosam.</p>`
+        }
+        else if (path[0] == 'modellingandvisualeffects') {
+      $app.innerHTML = `<h3>modellingandvisualeffects</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo quam eius fuga facere, totam veritatis. Corporis, minima cum, maiores, voluptatem dignissimos illo consequuntur cumque repellat pariatur blanditiis itaque. Laboriosam.</p>`
+        }
+
+        else {
+           $app.innerHTML=allStudents.filter(p => p.firstName == `${path[0]}`).map(returnStudentProfileAsHTML).join("\n");
+        }
+
+
+        
+
+        
+  
+  
 }
+}
+
+function returnStudentCardAsHTML(student){
+  return `
+    <article class="card">
+  <img src="${student.profilePicture}" alt="${student.firstName}" style="width:100%">
+  <h1>${student.firstName}</h1>
+  <h2>${student.skills}</h2>
+  <h2>${student.email}</h2>
+  <ul class="router"><li><a href="students/${student.firstName}">Know more</a></li></ul>
+  </article>
+  
+  `
+
+
+}
+
+function returnStudentProfileAsHTML(students){
+return `<article class="student-picture">
+<section class="cover-image">
+  
+</section>
+<section class="profile-picture">
+  <img src="img/students/profiles/blank-profile-picture.png" alt="">
+</section>
+</article>
+
+<article class="student-info">    
+<fieldset class="about-student">
+  <legend for="about-student"><img src="img/icons/icons8-user-90.png" alt="">About</legend>
+  <ul>
+    <li>Student ID : ${students.id}</li>
+    <li>First Name : ${students.firstName}</li>
+    <li>Last Name :${students.lastName} </li>
+    <li>Phone Number:${students.phoneNumber} </li>
+    <li>Email : ${students.email}</li>
+    <li><a href="#"><img src="/img/icons/facebook.png" alt=""></a></li>
+    <li><a href="#"><img src="/img/icons/linkedin.png" alt="" srcset=""></a></li>
+    <li><a href="#"><img src="/img/icons/github.png" alt="" srcset=""></a></li>
+  </ul>
+</fieldset>
+<fieldset class="student-skill">
+  <legend for="student-skill"><a href="/skills" alt="Skills">&nbsp; Skills</a> &nbsp;|&nbsp; <a href="/projects">Projects &nbsp;</a></legend>
+  <ul>
+    <li>1.</li>
+    <li>2.</li>
+  </ul>
+</fieldset>
+</article>`
+
+}
+
+
+
+function returnWddmLinks(students){
+return `<li><a href="students/${students.firstName}">${students.firstName}</a></li>`;
+}
+
+
 
