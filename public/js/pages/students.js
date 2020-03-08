@@ -115,7 +115,7 @@ export default class Contact extends Page {
 		super()
     this.html = `<h2>Find students by programs</h2>
     <h3>test</h3>
-    <ul>
+    <ul class="router">
     <li><a href="students/Wddm">Web Design and dev</a></li>
     <li><a href="students/graphicdesign">Graphic design</a></li>
     <li><a href="students/modellingandvisualeffects">3d modelling and visual des</a></li>    
@@ -138,13 +138,14 @@ export default class Contact extends Page {
     if (path[0] == 'Wddm') {
       $app.innerHTML = `<h3>wdmm</h3>
       <p>WDDDM</p>
-      <ul>`
+
+      <ul class="router">`
       $app.innerHTML+=allStudents.filter(p => p.program == 'wddm').map(returnStudentCardAsHTML).join("\n");
     
     } else if (path[0]== 'graphicdesign') {
       $app.innerHTML = `<h3>graphicdesign</h3>
       <p>Graphic Design</p>
-      <ul>
+      <ul class="router">
       `
       $app.innerHTML+=allStudents.filter(p => p.program == 'graphicdesign').map(returnStudentCardAsHTML).join("\n");
 
@@ -152,7 +153,7 @@ export default class Contact extends Page {
         else if (path[0] == 'modellingandvisualeffects') {
       $app.innerHTML = `<h3>modellingandvisualeffects</h3>
       <p>3D modeling</p>
-      <ul>
+      <ul class="router">
       `
       $app.innerHTML+=allStudents.filter(p => p.program == 'modellingandvisualeffects').map(returnStudentCardAsHTML).join("\n");        }
 
@@ -178,7 +179,7 @@ function returnStudentCardAsHTML(student){
       <li>Skills set : ${student.skills}</li>
       <li>Email : ${student.email}</li>
     </ul>
-    <ul class="router">
+    <ul class="router button">
       <li><a href="students/${student.firstName}">Know more</a></li>
     </ul>
   </article>
