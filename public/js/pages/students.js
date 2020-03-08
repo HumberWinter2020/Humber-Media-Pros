@@ -43,7 +43,7 @@ const allStudents =[
     profilePicture : `img03.jpg`,
     firstName: `ram`,
     lastName:`charan`,
-    program:`Graphic Design`,
+    program:`graphicdesign`,
     phoneNumber: ``,
     email: `@humbermail.ca`,
     skills: ``,
@@ -57,7 +57,49 @@ const allStudents =[
     profilePicture : `img04.jpg`,
     firstName: `priya`,
     lastName:`kumari`,
-    program:`3d modelling and visual`,
+    program:`graphicdesign`,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: `PhotoShop`,
+    projects: ``,
+    facebookURL: ``,
+    linkedinURL:``,
+    githubURL:``
+  },{ //4
+    id : 20200105,
+    coverImg:`img05a.jpg`,
+    profilePicture : `img04.jpg`,
+    firstName: `peter`,
+    lastName:`lou`,
+    program:`graphicdesign`,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: `PhotoShop`,
+    projects: ``,
+    facebookURL: ``,
+    linkedinURL:``,
+    githubURL:``
+  },{ //5
+    id : 20200106,
+    coverImg:`img06a.jpg`,
+    profilePicture : `img04.jpg`,
+    firstName: `michael`,
+    lastName:`white`,
+    program:`modellingandvisualeffects`,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: ``,
+    projects: ``,
+    facebookURL: ``,
+    linkedinURL:``,
+    githubURL:``
+  },{ //6
+    id : 20200107,
+    coverImg:`img07a.jpg`,
+    profilePicture : `img04.jpg`,
+    firstName: `David`,
+    lastName:`Red`,
+    program:`modellingandvisualeffects`,
     phoneNumber: ``,
     email: `@humbermail.ca`,
     skills: ``,
@@ -72,7 +114,7 @@ export default class Contact extends Page {
   constructor() {
 		super()
     this.html = `<h2>Find students by programs</h2>
-    <h3>test<\h3>
+    <h3>test</h3>
     <ul>
     <li><a href="students/Wddm">Web Design and dev</a></li>
     <li><a href="students/graphicdesign">Graphic design</a></li>
@@ -101,12 +143,18 @@ export default class Contact extends Page {
     
     } else if (path[0]== 'graphicdesign') {
       $app.innerHTML = `<h3>graphicdesign</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo quam eius fuga facere, totam veritatis. Corporis, minima cum, maiores, voluptatem dignissimos illo consequuntur cumque repellat pariatur blanditiis itaque. Laboriosam.</p>`
+      <p>Graphic Design</p>
+      <ul>
+      `
+      $app.innerHTML+=allStudents.filter(p => p.program == 'graphicdesign').map(returnStudentCardAsHTML).join("\n");
+
         }
         else if (path[0] == 'modellingandvisualeffects') {
       $app.innerHTML = `<h3>modellingandvisualeffects</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo quam eius fuga facere, totam veritatis. Corporis, minima cum, maiores, voluptatem dignissimos illo consequuntur cumque repellat pariatur blanditiis itaque. Laboriosam.</p>`
-        }
+      <p>3D modeling</p>
+      <ul>
+      `
+      $app.innerHTML+=allStudents.filter(p => p.program == 'modellingandvisualeffects').map(returnStudentCardAsHTML).join("\n");        }
 
         else {
            $app.innerHTML=allStudents.filter(p => p.firstName == `${path[0]}`).map(returnStudentProfileAsHTML).join("\n");
@@ -148,7 +196,7 @@ return `<article class="student-picture">
   
 </section>
 <section class="profile-picture">
-<img src="${settings.profilePath+students.profilePicture}" alt="${students.firstName}" >
+<img src="${settings.profilePath+students.profilePicture}" alt="${students.firstName}" class="profile-image">
 </section>
 </article>
 
