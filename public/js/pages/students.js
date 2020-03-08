@@ -120,7 +120,8 @@ export default class Contact extends Page {
     <li><a href="students/graphicdesign">Graphic design</a></li>
     <li><a href="students/modellingandvisualeffects">3d modelling and visual des</a></li>    
     </ul>
-    <article id="app"></article>`
+    <article id="app"></article>
+    `
   }
   registerListeners() {
     console.log('registerListeners() from: students page')
@@ -135,6 +136,8 @@ export default class Contact extends Page {
     const arrayLength = path.length;
     const Lastroute =window.location.pathname.split('/')[window.location.pathname.split('/').length-1]
     //Depending on the first directive in the URL, load up different content (these can also be Page components!)
+    console.log(returnStudentcards(allStudents))
+    
     if (path[0] == 'Wddm') {
       $app.innerHTML = `<h3>wdmm</h3>
       <p>WDDDM</p>
@@ -149,17 +152,15 @@ export default class Contact extends Page {
       `
       $app.innerHTML+=allStudents.filter(p => p.program == 'graphicdesign').map(returnStudentCardAsHTML).join("\n");
 
-        }
-        else if (path[0] == 'modellingandvisualeffects') {
+    } else if (path[0] == 'modellingandvisualeffects') {
       $app.innerHTML = `<h3>modellingandvisualeffects</h3>
       <p>3D modeling</p>
       <ul class="router">
       `
-      $app.innerHTML+=allStudents.filter(p => p.program == 'modellingandvisualeffects').map(returnStudentCardAsHTML).join("\n");        }
-
-        else {
-           $app.innerHTML=allStudents.filter(p => p.firstName == `${path[0]}`).map(returnStudentProfileAsHTML).join("\n");
-        }
+      $app.innerHTML+=allStudents.filter(p => p.program == 'modellingandvisualeffects').map(returnStudentCardAsHTML).join("\n");        
+    } else {
+      $app.innerHTML+= returnStudentcards(allStudents);
+    }
 
 
         
@@ -168,6 +169,15 @@ export default class Contact extends Page {
   
   
 }
+}
+function returnStudentcards(students){
+
+  var allStudentsString = ``
+  students.forEach(student => {
+
+    allStudentsString += returnStudentCardAsHTML(student)
+  });
+  return  allStudentsString
 }
 
 function returnStudentCardAsHTML(student){
