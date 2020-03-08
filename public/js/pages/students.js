@@ -111,7 +111,7 @@ const allStudents =[
   },{ //5
     id : 20200106,
     coverImg:`img06a.jpg`,
-    profilePicture : `img04.jpg`,
+    profilePicture : `img05.jpg`,
     firstName: `michael`,
     lastName:`white`,
     program:`modellingandvisualeffects`,
@@ -132,7 +132,7 @@ const allStudents =[
   },{ //6
     id : 20200107,
     coverImg:`img07a.jpg`,
-    profilePicture : `img04.jpg`,
+    profilePicture : `img01.jpg`,
     firstName: `David`,
     lastName:`Red`,
     program:`modellingandvisualeffects`,
