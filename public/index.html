@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/student.css">
+    <link rel="stylesheet" href="/css/student-card.css">
 
     <script src="https://kit.fontawesome.com/70195ad3d9.js" crossorigin="anonymous"></script>
   </head>
@@ -49,7 +50,7 @@
           Too bad the menu has to be inside of the button
           but hey, it's pure CSS magic.
           -->
-          <ul class="router" id="menu">
+          <ul id="menu">
             <a href="/home"><li>Home</li></a>
             <a href="/programs"><li>Programs</li></a>
             <a href="/students"><li>Students</li></a>
@@ -59,16 +60,9 @@
     </header>
 
     <main class="main">
-      <select name="sort" id="sortOrder" class="sort">
-                 
-        <option value="priceHigh">Price, highest to lowest</option>
-        <option value="priceLow">Price, lowest to highest</option>
-        <option value="nameAsc" selected>Name, A to Z</option>
-        <option value="nameDesc">Name, Z to A</option>
-        
-      </select>
-      <h2>Products <small id="numResults">(5 results)</small></h2>
-      <section id="products" class="products"></section>
+      <div class="students">
+
+      </div>
     </main>
 
     <footer class="footer">

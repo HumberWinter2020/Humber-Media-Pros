@@ -1,216 +1,185 @@
 import Page from '../page.js'
 
-
 const settings = {
-  notifyQuantitiesRemaining: 5,
-  // productsPerPage: 3,
-  coverPath: 'img/students/covers/',
-  profilePath :'img/students/profiles/'
+
+  coverPath: '/img/students/covers/',
+  profilePath :'/img/students/profiles/'
 }
 
-
-// const allStudents =[
-//   { //0
-//     id : 20200101,
-//     coverImg:`img01a.jpg`,
-//     profilePicture : `img01.png`,
-//     firstName: `Ivandi`,
-//     lastName:`Santoso`,
-//     phoneNumber: 123456789,
-//     email: `n01398965@humbermail.ca`,
-//     skills: `HTML, CSS, JavaScript`,
-//     projects: `Single Page Application, Web Store`,
-//     facebookURL: `https://www.facebook.com/ivandisantoz`,
-//     linkedinURL:`https://www.linkedin.com/in/ivandisantoso/`,
-//     githubURL:`https://github.com/ivandisantoso`
-  
-//   },{ //1
-//     id : 20200102,
-//     coverImg:`img02a.jpg`,
-//     profilePicture : `img02.png`,
-//     firstName: `Student`,
-//     lastName:`Two`,
-//     phoneNumber: `456789123`,
-//     email: `student.two@humbermail.ca`,
-//     skills: `HTML, CSS`,
-//     projects: `Re-make apple website`,
-//     facebookURL: ``,
-//     linkedinURL:``,
-//     githubURL:``
-//   },{ //2
-//     id : 20200103,
-//     coverImg:`img03a.jpg`,
-//     profilePicture : `img03.jpg`,
-//     firstName: ``,
-//     lastName:``,
-//     phoneNumber: ``,
-//     email: `@humbermail.ca`,
-//     skills: ``,
-//     projects: ``,
-//     facebookURL: ``,
-//     linkedinURL:``,
-//     githubURL:``
-//   },{ //3
-//     id : 20200104,
-//     coverImg:`img04a.jpg`,
-//     profilePicture : `img04.jpg`,
-//     firstName: ``,
-//     lastName:``,
-//     phoneNumber: ``,
-//     email: `@humbermail.ca`,
-//     skills: ``,
-//     projects: ``,
-//     facebookURL: ``,
-//     linkedinURL:``,
-//     githubURL:``
-//   }
-// ];
-
-
-const allProducts =[
+const allStudents =[
   { //0
-    id : 101,
-    image : `Tshirt-119.png`,
-    name: `Champ Super 1`,
-    brand: `champion`,
-    colour: `red`,
-    size: `m`,
-    rating: `2stars`,
-    ratingImg: `2stars.png`,
-    available: 10,
-    price: 39
+    id : 20200101,
+    coverImg:`img01a.jpg`,
+    profilePicture : `img01.jpg`,
+    firstName: `Ivandi`,
+    lastName:`Santoso`,
+    program:`wddm`,
+    phoneNumber: 123456789,
+    email: `n01398965@humbermail.ca`,
+    skills: `HTML, CSS, JavaScript`,
+    projects: `Single Page Application, Web Store`,
+    facebookURL: `https://www.facebook.com/ivandisantoz`,
+    linkedinURL:`https://www.linkedin.com/in/ivandisantoso/`,
+    githubURL:`https://github.com/ivandisantoso`
+  
   },{ //1
-    id : 102,
-    image : `Tshirt-120.png`,
-    name: `Nike Super 1`,
-    brand: `nike`,
-    colour: `red`,
-    size: `s`,
-    rating: `3stars`,
-    ratingImg: `3stars.png`,
-    available: 5,
-    price: 59
-  },{ //19
-    id : 120,
-    image : `Tshirt-112.png`,
-    name: `Puma Super 5`,
-    brand: `puma`,
-    colour: `grey`,
-    size: `s`,
-    rating: `4stars`,
-    ratingImg: `4stars.png`,
-    available: 3,
-    price: 49
+    id : 20200102,
+    coverImg:`img02a.jpg`,
+    profilePicture : `img02.jpg`,
+    firstName: `sashidhar`,
+    lastName:`meesala`,
+    program:`wddm`,
+    phoneNumber: `456789123`,
+    email: `student.two@humbermail.ca`,
+    skills: `HTML, CSS`,
+    projects: `Re-make apple website`,
+    facebookURL: ``,
+    linkedinURL:``,
+    githubURL:``
+  },{ //2
+    id : 20200103,
+    coverImg:`img03a.jpg`,
+    profilePicture : `img03.jpg`,
+    firstName: `ram`,
+    lastName:`charan`,
+    program:`Graphic Design`,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: ``,
+    projects: ``,
+    facebookURL: ``,
+    linkedinURL:``,
+    githubURL:``
+  },{ //3
+    id : 20200104,
+    coverImg:`img04a.jpg`,
+    profilePicture : `img04.jpg`,
+    firstName: `priya`,
+    lastName:`kumari`,
+    program:`3d modelling and visual`,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: ``,
+    projects: ``,
+    facebookURL: ``,
+    linkedinURL:``,
+    githubURL:``
   }
 ];
 
-
-// Sorting order function
-const loadProductsByOrder = (arrToSort, criteria) => {
-
-  const sortedProducts = arrToSort.slice(); // clone the array
-
-  if (criteria == 'priceLow') {
-    // Smallest to largest
-    sortedProducts.sort((a, b) => a.price - b.price);
-  } else if (criteria == 'priceHigh') {
-    // Largest to smallest
-    sortedProducts.sort((a, b) => b.price - a.price);
-  } else if (criteria == 'nameAsc') {
-    // Largest to smallest
-    sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
-  } else if (criteria == 'nameDesc') {
-    // Largest to smallest
-    sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
-  }
-
-  return sortedProducts; // new array
-}
-
-
-
-// FUNCTIONS THAT BUILD OUR VIEW **************
-
-const getProductAsHtmlString = (product) =>{
-  let callout = ``;
-  let soldout = ``;
-  let register = `<button type="button" class="add-product" data-productid="${product.id}">Add</button>`;
-  if (product.available <= 0) {
-    callout = `<small class="callout">Sold out</small>`;
-    soldout = `soldout`;
-    register = ``;
-  } else if (product.available < settings.notifyQuantitiesRemaining) {
-    callout = `<small class="callout urgent">${product.available} remaining</small>`;
-  }
-  
-  return `
-  <article class="product ${(product.brand) ? `cat-${product.brand}` : ''} ${soldout}">
-  
-  <img src="${settings.imagePath + product.image}" alt="${product.name}" class="product-img">
-  </header>
- 
-      
-      <ul class="product-info">
-      <li><h3>${product.name}</h3></li>
-       <li><label>${callout}</label</li>
-        <li><label>Size:${product.size.toUpperCase()}</label></li>
-        <li><label>$ ${product.price}</label></li>
-        <li><img src="${settings.imagePath + product.ratingImg}" class="product-rating-img"></li>
-      </ul>
-      ${register}
-</article>
-  `;
-}
-
-const renderProductsFromArray = (arr) => {
-
-  //   document.getElementById(`products`).innerHTML = arr.map(getProductAsHtmlString).join(``);
-  //   let res = `result`;
-  //   if (arr.length == 1){
-  //     res = `result`
-  //   }
-  //   document.getElementById(`numResuts`).innerHTML = `(${arr.length} ${res})`;
-  // }
-  
-  // 1. SORT!!!
-  const sortBy = document.getElementById('sortOrder').value;    // dropdown value
-  arr = loadProductsByOrder(arr, sortBy);  // sort the products, reassign the new Array
-  
-    // 3. BUILD OUTPUT
-    if (arr.length > 0) {
-      document.getElementById('products').innerHTML = arr.map(getProductAsHtmlString).join('\n'); // Print products  
-    } else {
-      document.getElementById('products').innerHTML = 'Sorry, no matching results.' // Woops!
-    }
-  
-    document.getElementById('numResults').innerHTML = `(${arr.length} ${(arr.length == 1) ? 'result' : 'results'})`; // Display number of total results
-    
-  }
-
-
-//START
-window.addEventListener(`load`, () => {
-  renderProductsFromArray(allProducts);
-
-
-});
-
-
-export default class Students extends Page {
-	constructor() {
+export default class Contact extends Page {
+  constructor() {
 		super()
-		this.html = `
-	  <select name="sort" id="sortOrder" class="sort">
-                 
-        <option value="priceHigh">Price, highest to lowest</option>
-        <option value="priceLow">Price, lowest to highest</option>
-        <option value="nameAsc" selected>Name, A to Z</option>
-        <option value="nameDesc">Name, Z to A</option>
+    this.html = `<h2>Find students by programs</h2>
+    <h3>test<\h3>
+    <ul class="router">
+    <li><a href="students/Wddm">Web Design and dev</a></li>
+    <li><a href="students/graphicdesign">Graphic design</a></li>
+    <li><a href="students/modellingandvisualeffects">3d modelling and visual des</a></li>    
+    </ul>
+    <article id="app"></article>`
+  }
+  registerListeners() {
+    console.log('registerListeners() from: students page')
+    //document.querySelector('#dosomething').addEventListener('click', event => {
+      //alert("It worked!")
+    //})
+  }
+  subrequests(path) {
+    console.log(path) // The path (after the page) as an Array
+  
+    const $app = document.getElementById('app')
+    const arrayLength = path.length;
+    const Lastroute =window.location.pathname.split('/')[window.location.pathname.split('/').length-1]
+    //Depending on the first directive in the URL, load up different content (these can also be Page components!)
+    if (path[0] == 'Wddm') {
+      $app.innerHTML = `<h3>wdmm</h3>
+      <p>WDDDM</p>
+      <ul class="router">`
+      $app.innerHTML+=allStudents.filter(p => p.program == 'wddm').map(returnStudentCardAsHTML).join("\n");
+    
+    } else if (path[0]== 'graphicdesign') {
+      $app.innerHTML = `<h3>graphicdesign</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo quam eius fuga facere, totam veritatis. Corporis, minima cum, maiores, voluptatem dignissimos illo consequuntur cumque repellat pariatur blanditiis itaque. Laboriosam.</p>`
+        }
+        else if (path[0] == 'modellingandvisualeffects') {
+      $app.innerHTML = `<h3>modellingandvisualeffects</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo quam eius fuga facere, totam veritatis. Corporis, minima cum, maiores, voluptatem dignissimos illo consequuntur cumque repellat pariatur blanditiis itaque. Laboriosam.</p>`
+        }
+
+        else {
+           $app.innerHTML=allStudents.filter(p => p.firstName == `${path[0]}`).map(returnStudentProfileAsHTML).join("\n");
+        }
+
+
         
-      </select>
-      <h2>Products <small id="numResults">(5 results)</small></h2>
-      <section id="products" class="products"></section>
-    `
-	}
+
+        
+  
+  
 }
+}
+
+function returnStudentCardAsHTML(student){
+  return `
+  <article class="card">
+    <img src="${settings.profilePath+student.profilePicture}" alt="${student.firstName}" >
+    <ul class="student-card-info">
+      <li>Full name : ${student.firstName} ${student.lastName}</li>
+      <li>Skills set : ${student.skills}</li>
+      <li>Email : ${student.email}</li>
+    </ul>
+    <ul class="router button">
+      <li><a href="students/${student.firstName}">Know more</a></li>
+    </ul>
+  </article>
+  
+  `
+
+
+}
+
+
+
+function returnStudentProfileAsHTML(students){
+return `<article class="student-picture">
+<section class="cover-image">
+  
+</section>
+<section class="profile-picture">
+<img src="${settings.profilePath+students.profilePicture}" alt="${students.firstName}" >
+</section>
+</article>
+
+<article class="student-info">    
+<fieldset class="about-student">
+  <legend for="about-student">&nbsp; About &nbsp;</legend>
+  <ul>
+    <li>Student ID : ${students.id}</li>
+    <li>First Name : ${students.firstName}</li>
+    <li>Last Name :${students.lastName} </li>
+    <li>Phone Number:${students.phoneNumber} </li>
+    <li>Email : ${students.email}</li>
+    <li><a href="${students.facebookURL}"><img src="/img/icons/facebook.png" alt=""></a></li>
+    <li><a href="${students.linkedinURL}"><img src="/img/icons/linkedin.png" alt="" srcset=""></a></li>
+    <li><a href="${students.githubURL}"><img src="/img/icons/github.png" alt="" srcset=""></a></li>
+  </ul>
+</fieldset>
+<fieldset class="student-skill">
+  <legend for="student-skill"><a href="/skills" alt="Skills">&nbsp; Skills</a> &nbsp;|&nbsp; <a href="/projects">Projects &nbsp;</a></legend>
+  <ol>
+    <li>${students.skills}</li>
+    
+  </ol>
+</fieldset>
+</article>`
+
+}
+
+
+
+function returnWddmLinks(students){
+return `<li><a href="students/${students.firstName}">${students.firstName}</a></li>`;
+}
+
 

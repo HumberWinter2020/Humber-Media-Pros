@@ -9,6 +9,7 @@
 	--secondary : #D8AF07;
   --dark: #000000;
   --light: #ffffff;
+  --grey: #ddd;
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
   
 }
@@ -88,13 +89,7 @@ body {
 	height: 10rem;
 }
 
-.router{
-	/* background-color: var(--light); */
-	border: solid 1px;
-	/* width: 30%; */
 
-	
-}
 
 /* HAMBURGER */
 #menuToggle
@@ -388,7 +383,9 @@ body {
   padding-left:5em;
 }
 
-
+.students{
+  display: grid;
+}
 
 
 /* FOOTER */
@@ -529,6 +526,12 @@ body {
     width: 30%;
 
   }
+
+  /* .students{
+ 
+    grid-template-columns: repeat(2, 1fr)
+    
+  } */
 
   .information img{
     width: 100%;

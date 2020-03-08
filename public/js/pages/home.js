@@ -4,18 +4,6 @@ export default class Home extends Page {
 	constructor() {
 		super()
 		this.html = `
-
-		<select name="sort" id="sortOrder" class="sort">
-                 
-		<option value="priceHigh">Price, highest to lowest</option>
-		<option value="priceLow">Price, lowest to highest</option>
-		<option value="nameAsc" selected>Name, A to Z</option>
-		<option value="nameDesc">Name, Z to A</option>
-		
-	</select>
-	<h2>Products <small id="numResults">(5 results)</small></h2>
-	<section id="products" class="products"></section>
-
 		<div class="home-name">
 		<h2>Humber Media Pros</h2>
 	</div>
