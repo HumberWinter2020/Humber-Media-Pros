@@ -1,4 +1,4 @@
-/* .program, .main-section{
+.program, .main-section{
   border-bottom: solid 1px;
 }
 
@@ -10,7 +10,7 @@
 
 .program p, .main-section p, .course p{
   padding: 1rem;
-} */
+}
 
 
 .home-name h2{
