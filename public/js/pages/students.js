@@ -31,7 +31,7 @@ const allStudents =[
     lastName:`meesala`,
     program:`wddm`,
     phoneNumber: `456789123`,
-    email: `student.two@humbermail.ca`,
+    email: `n20200102@humbermail.ca`,
     skills: `HTML, CSS`,
     projects: `Re-make apple website`,
     facebookURL: ``,
@@ -44,10 +44,10 @@ const allStudents =[
     firstName: `ram`,
     lastName:`charan`,
     program:`graphicdesign`,
-    phoneNumber: ``,
-    email: `@humbermail.ca`,
-    skills: ``,
-    projects: ``,
+    phoneNumber: `41689763706`,
+    email: `n20200103@humbermail.ca`,
+    skills: `PhotoShop`,
+    projects: `Create gif for Humber`,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
@@ -58,10 +58,10 @@ const allStudents =[
     firstName: `priya`,
     lastName:`kumari`,
     program:`graphicdesign`,
-    phoneNumber: ``,
-    email: `@humbermail.ca`,
+    phoneNumber: `6471234567`,
+    email: `n20200107@humbermail.ca`,
     skills: `PhotoShop`,
-    projects: ``,
+    projects: `Build online store`,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
@@ -72,38 +72,38 @@ const allStudents =[
     firstName: `peter`,
     lastName:`lou`,
     program:`graphicdesign`,
-    phoneNumber: ``,
-    email: `@humbermail.ca`,
+    phoneNumber: `9378761279`,
+    email: `n20200107@humbermail.ca`,
     skills: `PhotoShop`,
-    projects: ``,
+    projects: `Create Humber logo`,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
   },{ //5
     id : 20200106,
     coverImg:`img06a.jpg`,
-    profilePicture : `img04.jpg`,
+    profilePicture : `img05.jpg`,
     firstName: `michael`,
     lastName:`white`,
     program:`modellingandvisualeffects`,
-    phoneNumber: ``,
-    email: `@humbermail.ca`,
-    skills: ``,
-    projects: ``,
+    phoneNumber: `3742349647`,
+    email: `n20200107@humbermail.ca`,
+    skills: `3D modeling tools`,
+    projects: `Building CN tower 3D model`,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
   },{ //6
     id : 20200107,
     coverImg:`img07a.jpg`,
-    profilePicture : `img04.jpg`,
+    profilePicture : `img01.jpg`,
     firstName: `David`,
     lastName:`Red`,
     program:`modellingandvisualeffects`,
-    phoneNumber: ``,
-    email: `@humbermail.ca`,
-    skills: ``,
-    projects: ``,
+    phoneNumber: `1234567890`,
+    email: `n20200107@humbermail.ca`,
+    skills: `3D modeling`,
+    projects: `Building CN tower 3D model`,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
@@ -115,7 +115,7 @@ export default class Contact extends Page {
 		super()
     this.html = `<h2>Find students by programs</h2>
     <h3>test</h3>
-    <ul>
+    <ul class="router">
     <li><a href="students/Wddm">Web Design and dev</a></li>
     <li><a href="students/graphicdesign">Graphic design</a></li>
     <li><a href="students/modellingandvisualeffects">3d modelling and visual des</a></li>    
@@ -138,13 +138,14 @@ export default class Contact extends Page {
     if (path[0] == 'Wddm') {
       $app.innerHTML = `<h3>wdmm</h3>
       <p>WDDDM</p>
-      <ul>`
+
+      <ul class="router">`
       $app.innerHTML+=allStudents.filter(p => p.program == 'wddm').map(returnStudentCardAsHTML).join("\n");
     
     } else if (path[0]== 'graphicdesign') {
       $app.innerHTML = `<h3>graphicdesign</h3>
       <p>Graphic Design</p>
-      <ul>
+      <ul class="router">
       `
       $app.innerHTML+=allStudents.filter(p => p.program == 'graphicdesign').map(returnStudentCardAsHTML).join("\n");
 
@@ -152,7 +153,7 @@ export default class Contact extends Page {
         else if (path[0] == 'modellingandvisualeffects') {
       $app.innerHTML = `<h3>modellingandvisualeffects</h3>
       <p>3D modeling</p>
-      <ul>
+      <ul class="router">
       `
       $app.innerHTML+=allStudents.filter(p => p.program == 'modellingandvisualeffects').map(returnStudentCardAsHTML).join("\n");        }
 
@@ -178,7 +179,7 @@ function returnStudentCardAsHTML(student){
       <li>Skills set : ${student.skills}</li>
       <li>Email : ${student.email}</li>
     </ul>
-    <ul class="router">
+    <ul class="router button">
       <li><a href="students/${student.firstName}">Know more</a></li>
     </ul>
   </article>
