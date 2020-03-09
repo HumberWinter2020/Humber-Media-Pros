@@ -189,7 +189,7 @@ export default class Contact extends Page {
 function returnStudentCardAsHTML(student){
   return `
   <article class="card">
-    <img src="${settings.profilePath+student.profilePicture}" alt="${student.firstName}" >
+    <img src="${settings.profilePath+student.profilePicture}" alt="${student.firstName}" class="studnet-card-img">
     <ul class="student-card-info">
       <li>Full name : ${student.firstName} ${student.lastName}</li>
       <li>Skills set : ${student.skills}</li>
