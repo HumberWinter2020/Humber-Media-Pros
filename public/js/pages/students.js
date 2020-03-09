@@ -31,22 +31,22 @@ const allStudents =[
     program:`wddm`,
     phoneNumber: `456789123`,
     email: `student.two@humbermail.ca`,
-    skills: `HTML, CSS`,
+    skills: `HTML, CSS,Js,XD,figma`,
     projects: `Re-make apple website`,
-    facebookURL: ``,
-    linkedinURL:``,
-    githubURL:``
+    facebookURL: `https:/www.facebook.com/sashidharursweetheart`,
+    linkedinURL:`https://www.linkedin.com/in/sashidharmeesala`,
+    githubURL:`https://github.com/sashidharmeesala`
   },{ //2
     id : 20200103,
     coverImg:`img03a.jpg`,
     profilePicture : `img03.jpg`,
-    firstName: `ram`,
-    lastName:`charan`,
+    firstName: `Ram`,
+    lastName:`Charan`,
     program:`graphicdesign`,
-    phoneNumber: ``,
-    email: `@humbermail.ca`,
-    skills: ``,
-    projects: ``,
+    phoneNumber: `456789044`,
+    email: `Ramcharan@humbermail.ca`,
+    skills: `HTML,CSS,JS,React`,
+    projects: `Project1, project2`,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
@@ -59,7 +59,7 @@ const allStudents =[
     program:`graphicdesign`,
     phoneNumber: ``,
     email: `@humbermail.ca`,
-    skills: `PhotoShop`,
+    skills: `PhotoShop,aftereffects,animate,ps`,
     projects: ``,
     facebookURL: ``,
     linkedinURL:``,
@@ -71,10 +71,10 @@ const allStudents =[
     firstName: `peter`,
     lastName:`lou`,
     program:`graphicdesign`,
-    phoneNumber: ``,
-    email: `@humbermail.ca`,
-    skills: `PhotoShop`,
-    projects: ``,
+    phoneNumber: `32423541514`,
+    email: `peter@humbermail.ca`,
+    skills: `PhotoShop,aftereffects,animate,ps`,
+    projects: `project 45 , project x`,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
@@ -85,9 +85,9 @@ const allStudents =[
     firstName: `michael`,
     lastName:`white`,
     program:`modellingandvisualeffects`,
-    phoneNumber: ``,
-    email: `@humbermail.ca`,
-    skills: ``,
+    phoneNumber: `998765477`,
+    email: `michael@humbermail.ca`,
+    skills: `3d modelling, visual effetcs`,
     projects: ``,
     facebookURL: ``,
     linkedinURL:``,
@@ -99,9 +99,9 @@ const allStudents =[
     firstName: `David`,
     lastName:`Red`,
     program:`modellingandvisualeffects`,
-    phoneNumber: ``,
-    email: `@humbermail.ca`,
-    skills: ``,
+    phoneNumber: `5678765434`,
+    email: `red@humbermail.ca`,
+    skills: `3d modelling, visual effetcs`,
     projects: ``,
     facebookURL: ``,
     linkedinURL:``,
@@ -115,7 +115,7 @@ const allStudents =[
     program:`wddm`,
     phoneNumber: `567891234`,
     email: `student.three@humbermail.ca`,
-    skills: `CSS`,
+    skills: `CSS,PHP`,
     projects: `Re-make airbnb website`,
     facebookURL: ``,
     linkedinURL:``,
@@ -171,8 +171,11 @@ export default class Contact extends Page {
       `
       $app.innerHTML+=allStudents.filter(p => p.program == 'modellingandvisualeffects').map(returnStudentCardAsHTML).join("\n");        }
 
-        else  {
+        else if(path[0] == null)  {
            $app.innerHTML=allStudents.map(returnStudentCardAsHTML).join("\n");
+        }
+        else{
+          $app.innerHTML=allStudents.filter(p => p.firstName == `${path[0]}`).map(returnStudentProfileAsHTML).join("\n");
         }
 
         
