@@ -116,11 +116,11 @@ padding: 0.25rem;
   grid-template-columns: repeat(2, 1fr);
 } */
 
-  .main article{
+  /* .main article{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
  
-  }
+  } */
 
   .card img{
   
