@@ -171,8 +171,8 @@ export default class Contact extends Page {
       `
       $app.innerHTML+=allStudents.filter(p => p.program == 'modellingandvisualeffects').map(returnStudentCardAsHTML).join("\n");        }
 
-        else {
-           $app.innerHTML=allStudents.filter(p => p.firstName == `${path[0]}`).map(returnStudentProfileAsHTML).join("\n");
+        else  {
+           $app.innerHTML=allStudents.map(returnStudentCardAsHTML).join("\n");
         }
 
         
