@@ -19,9 +19,9 @@ h1{
 h2{
   padding: 0.5rem;
 }
-/* .main{
+.main{
   display: grid;
-} */
+}
 
 /* label{
   width: 1rem;
@@ -51,10 +51,6 @@ h2{
   margin: 0.25rem;
   padding: 0.5rem 0;
   background-color: var(--grey);
-
-
-
-
 }
 
 .card img{
@@ -111,15 +107,17 @@ padding: 0.25rem;
     width: 100%;
 
   }
-/* .main{
+/* .main, .card{
   grid-template-columns: repeat(2, 1fr);
 } */
 
-  /* .main article{
+
+/* .card{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
  
   } */
+
 
   .card img{
   
