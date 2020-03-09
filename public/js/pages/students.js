@@ -1,8 +1,7 @@
 import Page from '../page.js'
 
 const settings = {
-  notifyQuantitiesRemaining: 5,
-  // productsPerPage: 3,
+
   coverPath: '/img/students/covers/',
   profilePath :'/img/students/profiles/'
 }
@@ -31,7 +30,7 @@ const allStudents =[
     lastName:`meesala`,
     program:`wddm`,
     phoneNumber: `456789123`,
-    email: `n20200102@humbermail.ca`,
+    email: `student.two@humbermail.ca`,
     skills: `HTML, CSS`,
     projects: `Re-make apple website`,
     facebookURL: ``,
@@ -44,10 +43,10 @@ const allStudents =[
     firstName: `ram`,
     lastName:`charan`,
     program:`graphicdesign`,
-    phoneNumber: `41689763706`,
-    email: `n20200103@humbermail.ca`,
-    skills: `PhotoShop`,
-    projects: `Create gif for Humber`,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: ``,
+    projects: ``,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
@@ -58,10 +57,10 @@ const allStudents =[
     firstName: `priya`,
     lastName:`kumari`,
     program:`graphicdesign`,
-    phoneNumber: `6471234567`,
-    email: `n20200107@humbermail.ca`,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
     skills: `PhotoShop`,
-    projects: `Build online store`,
+    projects: ``,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
@@ -72,38 +71,52 @@ const allStudents =[
     firstName: `peter`,
     lastName:`lou`,
     program:`graphicdesign`,
-    phoneNumber: `9378761279`,
-    email: `n20200107@humbermail.ca`,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
     skills: `PhotoShop`,
-    projects: `Create Humber logo`,
+    projects: ``,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
   },{ //5
     id : 20200106,
     coverImg:`img06a.jpg`,
-    profilePicture : `img05.jpg`,
+    profilePicture : `img04.jpg`,
     firstName: `michael`,
     lastName:`white`,
     program:`modellingandvisualeffects`,
-    phoneNumber: `3742349647`,
-    email: `n20200107@humbermail.ca`,
-    skills: `3D modeling tools`,
-    projects: `Building CN tower 3D model`,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: ``,
+    projects: ``,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
   },{ //6
     id : 20200107,
     coverImg:`img07a.jpg`,
-    profilePicture : `img01.jpg`,
+    profilePicture : `img04.jpg`,
     firstName: `David`,
     lastName:`Red`,
     program:`modellingandvisualeffects`,
-    phoneNumber: `1234567890`,
-    email: `n20200107@humbermail.ca`,
-    skills: `3D modeling`,
-    projects: `Building CN tower 3D model`,
+    phoneNumber: ``,
+    email: `@humbermail.ca`,
+    skills: ``,
+    projects: ``,
+    facebookURL: ``,
+    linkedinURL:``,
+    githubURL:``
+  },{ //7
+    id : 20200108,
+    coverImg:`img01a.jpg`,
+    profilePicture : `img03.jpg`,
+    firstName: `Student`,
+    lastName:`Three`,
+    program:`wddm`,
+    phoneNumber: `567891234`,
+    email: `student.three@humbermail.ca`,
+    skills: `CSS`,
+    projects: `Re-make airbnb website`,
     facebookURL: ``,
     linkedinURL:``,
     githubURL:``
@@ -114,12 +127,14 @@ export default class Contact extends Page {
   constructor() {
 		super()
     this.html = `<h2>Find students by programs</h2>
-    <h3>test</h3>
+  
+    <nav class="header-nav">
     <ul class="router">
-    <li><a href="students/Wddm">Web Design and dev</a></li>
-    <li><a href="students/graphicdesign">Graphic design</a></li>
-    <li><a href="students/modellingandvisualeffects">3d modelling and visual des</a></li>    
+      <li><a href="students/Wddm">Web Design and Development</a></li>
+      <li><a href="students/graphicdesign">Graphic Design</a></li>
+      <li><a href="students/modellingandvisualeffects">3d Modelling and Visual Effects</a></li>    
     </ul>
+    </nav>
     <article id="app"></article>`
   }
   registerListeners() {
@@ -136,31 +151,29 @@ export default class Contact extends Page {
     const Lastroute =window.location.pathname.split('/')[window.location.pathname.split('/').length-1]
     //Depending on the first directive in the URL, load up different content (these can also be Page components!)
     if (path[0] == 'Wddm') {
-      $app.innerHTML = `<h3>wdmm</h3>
-      <p>WDDDM</p>
-
-      <ul class="router">`
+      $app.innerHTML = `<h1>WDDM</h1>
+      
+      <ul>`
       $app.innerHTML+=allStudents.filter(p => p.program == 'wddm').map(returnStudentCardAsHTML).join("\n");
     
     } else if (path[0]== 'graphicdesign') {
-      $app.innerHTML = `<h3>graphicdesign</h3>
-      <p>Graphic Design</p>
-      <ul class="router">
+      $app.innerHTML = `<h1>Graphic Design</h1>
+    
+      <ul>
       `
       $app.innerHTML+=allStudents.filter(p => p.program == 'graphicdesign').map(returnStudentCardAsHTML).join("\n");
 
         }
         else if (path[0] == 'modellingandvisualeffects') {
-      $app.innerHTML = `<h3>modellingandvisualeffects</h3>
-      <p>3D modeling</p>
-      <ul class="router">
+      $app.innerHTML = `<h1>Modelling and Visual Effects</h1>
+     
+      <ul>
       `
       $app.innerHTML+=allStudents.filter(p => p.program == 'modellingandvisualeffects').map(returnStudentCardAsHTML).join("\n");        }
 
         else {
            $app.innerHTML=allStudents.filter(p => p.firstName == `${path[0]}`).map(returnStudentProfileAsHTML).join("\n");
         }
-
 
         
 
@@ -197,10 +210,9 @@ return `<article class="student-picture">
   
 </section>
 <section class="profile-picture">
-<img src="${settings.profilePath+students.profilePicture}" alt="${students.firstName}" class="profile-image">
+<img src="${settings.profilePath+students.profilePicture}" alt="${students.firstName}" >
 </section>
 </article>
-
 <article class="student-info">    
 <fieldset class="about-student">
   <legend for="about-student">&nbsp; About &nbsp;</legend>
@@ -231,5 +243,3 @@ return `<article class="student-picture">
 function returnWddmLinks(students){
 return `<li><a href="students/${students.firstName}">${students.firstName}</a></li>`;
 }
-
-
