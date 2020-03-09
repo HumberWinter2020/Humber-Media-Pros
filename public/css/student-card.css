@@ -72,7 +72,28 @@ width: 25%;
 
 
 @media(min-width: 600px){
+<<<<<<< HEAD
   .card{
+=======
+
+  .header-nav ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+
+  }
+/* .main{
+  grid-template-columns: repeat(2, 1fr);
+} */
+
+  /* .main article{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+ 
+  } */
+
+  .card img{
+>>>>>>> Ivan-branch
   
      
     grid-template-columns: repeat(2, 1fr)
