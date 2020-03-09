@@ -72,9 +72,6 @@ width: 25%;
 
 
 @media(min-width: 600px){
-<<<<<<< HEAD
-  .card{
-=======
 
   .header-nav ul{
     display: grid;
@@ -93,7 +90,6 @@ width: 25%;
   } */
 
   .card img{
->>>>>>> Ivan-branch
   
      
     grid-template-columns: repeat(2, 1fr)
